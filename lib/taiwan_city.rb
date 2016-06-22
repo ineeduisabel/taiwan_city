@@ -39,7 +39,6 @@ module TaiwanCity
 
     private
     def data
-      unless @list
         #{ '440000' =>
         #  {
         #    :text => '广东',
@@ -71,7 +70,6 @@ module TaiwanCity
             @list[city_id][:children][id] = {:text => text}
           end
         end
-      end
       @list
     end
 
