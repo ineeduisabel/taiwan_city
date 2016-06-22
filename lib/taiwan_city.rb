@@ -59,6 +59,7 @@ module TaiwanCity
         @list = {}
         #@see: http://github.com/RobinQu/LocationSelect-Plugin/raw/master/areas_1.0.json
         json = JSON.parse(File.read("#{Engine.root}/db/areas-#{I18n.locale}.json"))
+        put json
         districts = json.values.flatten
         districts.each do |district|
           id = district['id']
