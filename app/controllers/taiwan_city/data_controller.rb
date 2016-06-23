@@ -4,6 +4,7 @@ module TaiwanCity
   class DataController < ApplicationController
     def show
       data = TaiwanCity.list(params[:id])
+      binding.pry
       render json: data, layout: nil
     end
 
