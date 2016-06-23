@@ -4,15 +4,6 @@ require "taiwan_city/engine"
 module TaiwanCity
   TAIWAN = '00000' # 全国
   PATTERN = /(\d{2})(\d{3})/
-  
-  
-  def set_session(session_)
-    @mysession = session_ 
-  end
-
-  def session
-    return @mysession
-  end
 
   class << self
     def list(parent_id = '00000')
@@ -66,7 +57,8 @@ module TaiwanCity
         # }
         @list = {}
         #@see: http://github.com/RobinQu/LocationSelect-Plugin/raw/master/areas_1.0.json
-        json = JSON.parse(File.read("#{Engine.root}/db/areas-#{session[:locale]}.json"))
+        binding.pry
+        json = JSON.parse(File.read("#{Engine.root}/db/areas-#{I18n.locale}.json"))
         districts = json.values.flatten
         districts.each do |district|
           id = district['id']
