@@ -3,6 +3,7 @@ require_dependency "taiwan_city/application_controller"
 module TaiwanCity
   class DataController < ApplicationController
     def show
+      binding.pry
       data = TaiwanCity.list(params[:id])
       render json: data, layout: nil
     end
